@@ -3,6 +3,7 @@ import { type RouteConfig, layout, route } from "@react-router/dev/routes";
 
 // Correct usage: pass options as objects
 export default [
+    route('sign-in', './routes/root/sign-in.tsx'),
     layout(
         'routes/admin/admin-layout.tsx',
         [

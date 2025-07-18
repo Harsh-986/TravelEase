@@ -3,7 +3,7 @@
 import  { SidebarComponent } from '@syncfusion/ej2-react-navigations'
 import React from 'react'
 import { Link } from 'react-router'
-import Navitems from './Navitems'
+import NavItems from './Navitems'
 
 const MobileSidebar = () => {
   let sidebar: SidebarComponent
@@ -29,7 +29,7 @@ const MobileSidebar = () => {
         showBackdrop={true}
         type='over'>
 
-          <Navitems handleClick={toggleSidebar} />
+          <NavItems handleClick={toggleSidebar} />
       </SidebarComponent>
 
 
