@@ -29,7 +29,7 @@ An AI-powered travel planning platform that generates personalized travel itiner
 ## 🛠️ Tech Stack
 
 - **React Router 7** & **TypeScript**
-- **Tailwind CSS** & **Syncfusion Components** 
+- **Tailwind CSS**
 - **Appwrite** (Backend)
 - **Google Gemini AI** (Trip generation)
 - **Unsplash API** (Images)
