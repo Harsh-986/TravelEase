@@ -1,87 +1,93 @@
-# Welcome to React Router!
+# TravelEase 🌍✈️
 
-A modern, production-ready template for building full-stack React applications using React Router.
+An AI-powered travel planning platform that generates personalized travel itineraries using Google's Gemini AI. Built with React Router 7, TypeScript, and Appwrite.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 📸 Screenshots
 
-## Features
+### Dashboard
+![Dashboard Screenshot](./screenshots/dashboard.png)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+### Trip Creation
+![Trip Creation Screenshot](./screenshots/create-trip.png)
 
-## Getting Started
+### Trip Details
+![Trip Details Screenshot](./screenshots/trip-details.png)
 
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+### All Trips
+![All Trips Screenshot](./screenshots/all-trips.png)
 
 ---
 
-Built with ❤️ using React Router.
+## ✨ Features
+
+- **AI Trip Generation**: Personalized itineraries using Google Gemini AI
+- **User Authentication**: Google OAuth with role-based access
+- **Admin Dashboard**: Analytics, user management, and trip statistics
+- **Interactive Maps**: World map integration for destination selection
+- **Responsive Design**: Mobile-first approach with modern UI
+
+## 🛠️ Tech Stack
+
+- **React Router 7** & **TypeScript**
+- **Tailwind CSS** & **Syncfusion Components** 
+- **Appwrite** (Backend)
+- **Google Gemini AI** (Trip generation)
+- **Unsplash API** (Images)
+
+## 🚀 Getting Started
+
+### Environment Variables
+
+```env
+# Appwrite
+VITE_APPWRITE_API_ENDPOINT=https://cloud.appwrite.io/v1
+VITE_APPWRITE_PROJECT_ID=your_project_id
+VITE_APPWRITE_DATABASE_ID=your_database_id
+VITE_APPWRITE_USERS_ID=your_users_collection_id
+VITE_APPWRITE_TRIPS_ID=your_trips_collection_id
+
+# APIs
+GEMINI_API_KEY=your_gemini_api_key
+UNSPLASH_ACCESS_KEY=your_unsplash_access_key
+```
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/travelease.git
+cd travelease
+
+# Install dependencies
+npm install
+
+# Start development
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📁 Project Structure
+
+```
+app/
+├── appwrite/           # Backend services
+├── routes/             # React Router routes
+│   ├── admin/          # Admin panel
+│   ├── root/           # Public routes
+│   └── api/            # API endpoints
+components/             # UI components
+lib/                    # Utilities
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/name`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Create Pull Request
+
+## 📄 License
+
+MIT License
