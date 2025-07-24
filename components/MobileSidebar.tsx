@@ -16,7 +16,7 @@ const MobileSidebar = () => {
       <header>
         <Link to="/">
           <img src="/assets/icons/logo.svg" alt="logo" className='size-[30px]' />
-          <h1>TourEase</h1>
+          <h1>TravelEase</h1>
         </Link>
         
         <button onClick={toggleSidebar}>
