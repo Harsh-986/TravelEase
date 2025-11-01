@@ -1,14 +1,15 @@
-// @ts-nocheck
-
-import  { SidebarComponent } from '@syncfusion/ej2-react-navigations'
-import React from 'react'
+import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
+import { useRef } from 'react'
 import { Link } from 'react-router'
 import NavItems from './Navitems'
 
 const MobileSidebar = () => {
-  let sidebar: SidebarComponent
+  const sidebarRef = useRef<SidebarComponent>(null)
+  
   const toggleSidebar = () => {
-    sidebar.toggle();
+    if (sidebarRef.current) {
+      sidebarRef.current.toggle()
+    }
   }
 
   return (
@@ -19,22 +20,19 @@ const MobileSidebar = () => {
           <h1>TravelEase</h1>
         </Link>
         
-        <button onClick={toggleSidebar}>
+        <button onClick={toggleSidebar} aria-label="Toggle menu">
           <img src="/assets/icons/menu.svg" alt="menu" className="size-7" />
         </button>
-        
       </header>
+      
       <SidebarComponent 
         width={270} 
-        ref={Sidebar => sidebar = Sidebar}  
+        ref={sidebarRef}
         closeOnDocumentClick={true}
         showBackdrop={true}
-        type='over'>
-
-          <NavItems handleClick={toggleSidebar} />
+        type='Over'>
+        <NavItems handleClick={toggleSidebar} />
       </SidebarComponent>
-
-
     </div>
   )
 }
