@@ -1,12 +1,3 @@
-// import { type RouteConfig, route, index } from "@react-router/dev/routes";
-
-// export default [
-//     // Just the sign-in route for now
-//     index('./routes/root/sign-in.tsx'),
-//     route('sign-in', './routes/root/sign-in.tsx'),
-// ] satisfies RouteConfig;
-
-
 import { type RouteConfig, layout, route, index } from "@react-router/dev/routes";
 
 export default [
@@ -15,6 +6,9 @@ export default [
     
     // Sign in route
     route('sign-in', './routes/root/sign-in.tsx'),
+    
+    // User create trip route
+    route('create-trip', './routes/root/create-trip.tsx'),
     
     // API routes
     route('api/create-trip', './routes/api/create-trip.tsx'),
@@ -29,5 +23,8 @@ export default [
         route('trips', './routes/admin/trips.tsx'),
         route('trips/create', './routes/admin/create-trip.tsx'),
         route('trips/:tripId', './routes/admin/trip-detail.tsx')
-    ])
+    ]),
+    
+    // Catch-all route for 404s and browser-specific requests
+    
 ] satisfies RouteConfig;

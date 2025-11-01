@@ -1,4 +1,4 @@
-import { redirect } from "react-router";
+import { redirect, Link } from "react-router";
 import { account } from "~/appwrite/client";
 import { getExistingUser } from "~/appwrite/auth";
 import { getAllTrips } from "~/appwrite/trips";
@@ -41,16 +41,28 @@ const TravelPage = ({ loaderData }: Route.ComponentProps) => {
             <RootNavbar />
             <main className="min-h-screen bg-light-200 pt-24">
                 <section className="wrapper py-10">
-                    <div className="flex flex-col gap-6">
-                        <div className="flex flex-col gap-3">
-                            <h1 className="text-2xl md:text-4xl font-bold text-dark-100">
-                                Discover Your Next Adventure
-                            </h1>
-                            <p className="text-base md:text-lg text-gray-100">
-                                Explore AI-generated travel plans tailored to your preferences
-                            </p>
+                    <div className="flex flex-col gap-8">
+                        {/* Header Section with CTA */}
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+                            <div className="flex flex-col gap-3">
+                                <h1 className="text-2xl md:text-4xl font-bold text-dark-100">
+                                    Discover Your Next Adventure
+                                </h1>
+                                <p className="text-base md:text-lg text-gray-100">
+                                    Explore AI-generated travel plans tailored to your preferences
+                                </p>
+                            </div>
+                            
+                            <Link 
+                                to="/create-trip" 
+                                className="flex items-center justify-center gap-2 px-6 py-3 bg-primary-100 text-white rounded-lg font-semibold hover:bg-primary-500 transition-colors shadow-100 whitespace-nowrap"
+                            >
+                                <img src="/assets/icons/magic-star.svg" alt="AI" className="size-5" />
+                                <span>Create AI Trip</span>
+                            </Link>
                         </div>
 
+                        {/* Trips Grid */}
                         <div className="trip-grid">
                             {trips.map((trip) => (
                                 <TripCard
@@ -65,9 +77,25 @@ const TravelPage = ({ loaderData }: Route.ComponentProps) => {
                             ))}
                         </div>
 
+                        {/* Empty State */}
                         {trips.length === 0 && (
-                            <div className="flex items-center justify-center py-20">
-                                <p className="text-lg text-gray-500">No trips available yet</p>
+                            <div className="flex flex-col items-center justify-center py-20 gap-6">
+                                <img 
+                                    src="/assets/icons/logo.svg" 
+                                    alt="TravelEase" 
+                                    className="size-20 opacity-50"
+                                />
+                                <div className="flex flex-col gap-2 text-center">
+                                    <p className="text-xl font-semibold text-dark-100">No trips available yet</p>
+                                    <p className="text-base text-gray-100">Create your first AI-powered travel itinerary!</p>
+                                </div>
+                                <Link 
+                                    to="/create-trip" 
+                                    className="flex items-center justify-center gap-2 px-8 py-4 bg-primary-100 text-white rounded-lg font-semibold hover:bg-primary-500 transition-colors shadow-100"
+                                >
+                                    <img src="/assets/icons/magic-star.svg" alt="AI" className="size-5" />
+                                    <span>Create Your First Trip</span>
+                                </Link>
                             </div>
                         )}
                     </div>
